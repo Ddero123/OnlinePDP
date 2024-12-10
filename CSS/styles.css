@@ -81,7 +81,7 @@ nav ul li a:hover {
 
 /*body*/
 body {
- background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url("/images/backdrop6.jpg");
+ background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url("images/backdrop6.jpg");
  background-repeat: no-repeat;
  background-attachment: fixed;  
  background-size: cover;
