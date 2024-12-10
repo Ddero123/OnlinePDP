@@ -1,0 +1,158 @@
+<header>
+  <!-- logo -->
+  <div class="logo">
+    <a href="index.html"><img src="images/namelogo.png" alt="logo" /></a>
+  </div>
+  <!-- place menu here -->
+  <!-- navigation -->
+  <nav>
+    <ul class="nav_links">
+      <!-- sidebar -->
+      <li>
+        <a
+          href="#sidebar"
+          class="d-block mt-3"
+          data-bs-toggle="offcanvas"
+          role="button"
+          aria-controls="sidebar"
+          >&#9776;</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <!-- end navigation -->
+</header>
+<!-- sidebar settings -->
+<div
+  class="offcanvas offcanvas-end text-bg-dark"
+  tabindex="-1"
+  id="sidebar"
+  aria-labelledby="sidebar-label"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sidebar-label">Semesters Dashboard</h5>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <p>
+      These are the semesters that I have completed. The latest semester is
+      where I currently am.
+    </p>
+    <!-- dropdown -->
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="index.html"
+          ><b>Home</b></a
+        >
+      </li>
+      <!--divider-->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i>Semester 1</i> _ <b>ICT Orientation</b>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li>
+            <a class="dropdown-item" href="pdf/UpdatedPEP.pdf" target="_blank"
+              >PEP Link</a
+            >
+          </li>
+        </ul>
+        <!--divider-->
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i>Semester 2</i> _ <b>ICT Infrastructure</b>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li>
+            <a class="dropdown-item" href="con-pro.html"
+              >Connecting & Provisioning</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="man-sec.html">Managing & Securing</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="progr-infr.html"
+              >Programming for Infrastructure</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="casestudies.html">Case Studies</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="workshops.html">Workshops</a>
+          </li>
+        </ul>
+        <!--divider-->
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i>Semester 3</i> _ <b>AWS, Ansible & Terraform</b>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li>
+            <a class="dropdown-item" href="sem3-AO.html"
+              >Automation & Orchestration
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="sem3-SNO.html"
+              >Security & Network Orchestration</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="sem3-MSS.html"
+              >Monitoring & Supporting Services</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="sem3-case.html">Case Studies</a>
+          </li>
+          <li><a class="dropdown-item" href="sem3-work.html">Workshops</a></li>
+        </ul>
+        <!--divider-->
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i>Semester 4</i> _ <b>Cyber-Security</b>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li>
+            <a class="dropdown-item" href="sem4-Overview.html">Overview </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="sem4-PersonalProjects.html"
+              >Personal Projects</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- end sidebar -->

@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+/*Whole page*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* smooth scroll effect */
+html{
+    scroll-behavior: smooth;
+}
+
+/*Header and footer stuff*/
+Main {
+    min-height: calc(100vh - 138px); 
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+
+header{
+    text-align: right;
+    align-items: flex-end;
+    justify-content: space-between;
+    background: hsl(0 0 100% / 0.1);
+    backdrop-filter: blur(2rem);
+}
+
+.something{
+    text-align: center;
+   
+}
+
+footer {
+    padding: 20px;
+    background: hsl(0 0 100% / 0.1);
+    backdrop-filter: blur(2rem);
+}
+  
+
+footer p {
+    color: white;
+    font-size: small;
+    text-align: center;
+}
+.logo img{
+    width: 90px;
+    cursor: pointer;
+    
+}
+.logo{
+  
+    display:flex;
+    margin-bottom: -75px;
+
+}
+/* Nav links*/
+
+nav ul li{
+list-style: none;
+line-height: 90px;
+display: inline-block;
+}
+
+nav ul li a{
+display: block;
+color: white;
+text-decoration:none;
+font-size: 40px;
+font-family: "Montserrat", sans-serif;
+padding: 0 20px;
+}
+
+nav ul li a:hover {
+    color: #959798;
+}
+
+
+/*body*/
+body {
+ background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url("/images/backdrop6.jpg");
+ background-repeat: no-repeat;
+ background-attachment: fixed;  
+ background-size: cover;
+ color: white;
+}
+
+
+/* home page */
+.image {
+   position: relative;
+   left: 70%;
+   margin-top: -50%;
+   width:35%;
+   height:auto;
+   border-radius: 200px;
+}
+
+/* con-pro */
+.image2 {
+   position:absolute;
+   top: 30%;
+   right: 5%;
+   width: 22vw;
+   height: 24vw;
+
+   border-radius:50%;
+   max-width: 100%;
+   max-height: 100%;
+}
+
+/* man-sec */
+.image3 {
+    position:absolute;
+    top: 30%;
+    right: 5%;
+    width: 22vw;
+    height: 24vw;
+ 
+    border-radius:50%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* progr-infr */
+.image4 {
+   position: absolute;
+   top: 30%;
+   right: 60px;
+   width:22%;
+   height:auto;
+   border-radius: 175px;
+   
+}
+
+/* case studies */
+.image5 {
+    position:absolute;
+    top: 30%;
+    right: 5%;
+    width: 22vw;
+    height: 24vw;
+ 
+    border-radius:50%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Workshops */
+.image6 {
+    position:absolute;
+    top: 30%;
+    right: 5%;
+    width: 22vw;
+    height: 24vw;
+ 
+    border-radius:50%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.allsemgifs{
+    position:absolute;
+    top: 30%;
+    right: 5%;
+    width: 22vw;
+    height: 24vw;
+ 
+    border-radius:50%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pageTitle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.casestudy2h1{
+    text-align: center;
+}
+
+
+.introduction {
+    width: 65%;
+    margin-top: -15px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.whyIchoseInfra{
+    width: 65%;
+    margin-top: 40px;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.weeks{
+    text-align: left;
+    width: 66%;
+    line-height: 25px;
+    text-align: justify;
+}
+
+/* scroll up page button */
+    #progress {
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        height: 70px;
+        width: 70px;
+        display: none;
+        place-items: center;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 99;
+      }
+      #progress-value {
+        display: block;
+        height: calc(100% - 15px);
+        width: calc(100% - 15px);
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 35px;
+        color: #001a2e;
+      }
+
+/*animation /whoami*/
+.line {
+    position: relative;
+    top: 50%;
+    width: 16em;
+    margin: 2px;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;transform: translateY(-50%);
+}
+
+.anim-typewriter {
+    animation: typewriter 2s steps(1000) 1s 1 normal both,
+    blinkTextCursor 500ms steps(1000) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+          width: 0;
+    }
+    to {
+          width: 5em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+          border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+          border-right-color: transparent;
+    }
+}
+
+/*Animation2 why i chose infra*/
+.anim-typewriter2 {
+    animation: typewriter 2s steps(1000) 1s 1 normal both,
+    blinkTextCursor 500ms steps(1000) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+          width: 0;
+    }
+    to {
+          width: 16em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+          border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+          border-right-color: transparent;
+    }
+}
+
+.line2 {
+    position: relative;
+    top: 50%;
+    width: 10em;
+    margin: 2px;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;transform: translateY(-50%);
+}
+
+/* week Images layout*/
+div.gallery {
+    border: 1px solid #ccc;
+    margin-top: 190px;
+    margin-bottom: 20px;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+  }
+  
+
+  /* monitor */
+  @media only screen and (max-width: 1390px) {
+    .image{
+        margin-top: -80%;
+    }
+
+    }
+
+    /* mobile settings */
+  @media only screen and (max-width: 750px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+    
+    /* test */
+    main {
+        width: 49.99999%;
+        margin: 30px 0;
+        
+    }
+    body {
+        max-width: 100%;
+       
+    }
+    
+    /* homepage animation */
+    .line2{
+       font-size:21px;
+    }
+    .line{
+       font-size:21px;
+    }
+
+    /* homepage */
+    .image{
+        float: right;
+        width: 150px;
+        height: 150px;
+        margin-right: -120px;
+        margin-top: -20px;
+    }
+
+    /* C&P */
+    .image2{
+        position: relative;
+        margin-top: 25%;
+        left: 50%;
+        width: 100%;
+        height: 200px;
+    }
+
+    /* M&S */
+    .image3{
+        position: relative;
+        margin-top: 25%;
+        left: 50%;
+        width: 100%;
+        height: 200px;
+    }
+
+    /* progr */
+    .image4{
+        position: relative;
+        width: 160%;
+        height: auto;
+        margin-top: 25%;
+        left: 20%;
+       
+    }
+
+    /* case studies */
+    .image5{
+        position: relative;
+        margin-top: 25%;
+        left: 50%;
+        width: 100%;
+        height: 200px;
+    }
+
+    /* workshops */
+    .image6{
+        position: relative;
+        margin-top: 25%;
+        left: 50%;
+        width: 100%;
+        height: 200px;
+    }
+
+    .allsemgifs {
+        position: relative;
+        margin-top: 25%;
+        left: 50%;
+        width: 100%;
+        height: 200px;
+    }
+
+    .logo{
+       width: 50px;
+       height: 40px;
+    }
+
+    .introduction{
+       width: 310px;
+    }
+
+    .whyIchoseInfra{
+        width: 310px;
+    }
+
+    .weeks{
+        width: 210%;
+        line-height: 30px;
+        padding: 39px;
+        text-align: left;
+    }
+
+    .footer{
+        margin-top: 100px;
+    }
+
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 90%;
+    }
+    .image{
+        left: auto;
+    }
+
+  }
+
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Welcome to my personal development website"
+    />
+    <meta name="keywords" content="Personal Portfolio Website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Development Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- pop -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <!-- add menu script -->
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include the menu using JavaScript -->
+    <script>
+      $(function () {
+        $("#semester-menu").load("menu.html");
+      });
+    </script>
+    <!-- end add menu script -->
+  </head>
+  <body>
+    <script src="javascript/app.js"></script>
+    <!-- Placeholder for the menu -->
+    <div id="semester-menu"></div>
+    <!-- end placeholder menu here -->
+    <div class="container">
+      <h1 class="pageTitle">Introduction</h1>
+      <main class="Main_page">
+        <h2 class="line anim-typewriter">/whoami</h2>
+        <div class="introduction">
+          <p>
+            My name is Dave Derosiers, I was born and raised in Aruba. I came to
+            the Netherlands to further my studies in Information Communication
+            and Technology (ICT). Why? because I think its very cool &
+            interesting. I'm currently studying at Fontys University of Applied
+            Sciences (HBO). I have a passion for technology and a strong drive
+            to succeed and make a positive impact in the world with my studies
+            and future career.
+          </p>
+        </div>
+        <div class="whyIchoseInfra">
+          <h2 class="line2 anim-typewriter2">
+            Why I chose ICT infrastructure?
+          </h2>
+          <p>
+            ICT infrastructure is critical for the functioning and delivery of
+            various ICT services such as internet connectivity, e-commerce,
+            e-government, and digital communication. I like to build networks
+            and experiment with Linux and Windows. I also plan on doing
+            Cyber-security in the future. So far during my studies at Fontys I
+            build relationships with future Software engineers, Ux/Ui designers,
+            Cloud engineers and many more.
+          </p>
+        </div>
+        <!-- Personal Goals -->
+        <div class="whyIchoseInfra">
+          <h2 class="line2 anim-typewriter2">Personal Goals</h2>
+          <p>
+            With a strong interest in cyber security, I am determined to
+            specialize in this field and make a career out of it. I am committed
+            to acquiring the skills and knowledge necessary to secure and
+            protect valuable information in the digital age & also to defend
+            myself in the digital world.
+          </p>
+        </div>
+        <!-- mypic -->
+        <img class="image" src="images/pdppicv2pro.jpg" alt="pic of me" />
+      </main>
+
+      <div class="something">
+        <a
+          href="https://www.figma.com/file/qoiHvcIi22SnTPGl68DSqY/pepWebsite"
+          target="_blank"
+          >My Figma Prototype of this website</a
+        >
+      </div>
+    </div>
+    <div class="footer">
+      <footer>
+        <p>
+          &copy;PDP by Dave Derosiers <span id="current-year"></span>, All
+          Rights Reserved
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
