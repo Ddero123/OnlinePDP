@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Welcome to my personal development website"
+    />
+    <meta name="keywords" content="Personal Portfolio Website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Development Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- pop -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <!-- add menu script -->
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include the menu using JavaScript -->
+    <script>
+      $(function () {
+        $("#semester-menu").load("menu.html");
+      });
+    </script>
+    <!-- end add menu script -->
+    <style>
+      body {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url("images/backdrop6.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="javascript/app.js"></script>
+    <div id="progress">
+      <span id="progress-value">&#8613;</span>
+    </div>
+    <!-- Placeholder for the menu -->
+    <div id="semester-menu"></div>
+    <!-- end placeholder menu here -->
+    <div class="container">
+      <h1 class="pageTitle">Securing Zolder AI</h1>
+      <main class="Main_page">
+        <div class="weeks">
+          <h2>Introduction</h2>
+          <p>
+            Zolder B.V. is developing an AI agent designed to help users query
+            **KQL (Kusto Query Language)** data in the Azure Sentinel workspace.
+            This AI agent simplifies the process of extracting insights from
+            Sentinel, providing users with actionable data for security
+            monitoring and analysis. However, developing such an AI system comes
+            with challenges—how do we ensure the agent remains secure from
+            malicious inputs that could exploit or manipulate it?
+            <br />
+            <br />
+            Initially, the AI was implemented with a textbox interface that
+            allowed users to input queries freely. While flexible, this approach
+            introduced potential security risks such as prompt injection
+            attacks, model manipulation, and unintended system behavior. To
+            address these risks, we focused on securing the AI agent through
+            techniques like input validation, structured queries, and
+            session-based controls. This blog will share insights into our
+            research, the steps we took to protect the AI, and the lessons
+            learned along the way.
+          </p>
+
+          <h2>Background</h2>
+          <p>
+            The Zolder AI agent interacts with Azure Sentinel by generating
+            **KQL queries** based on user input and providing meaningful
+            results. Azure Sentinel is a powerful cloud-based SIEM (Security
+            Information and Event Management) solution, and KQL is the query
+            language used to extract data from its logs.
+          </p>
+          <p>
+            Depending on the AI model and the user's input, the quality of query
+            results can vary. Moreover, unfiltered user inputs can introduce
+            risks such as:
+          </p>
+          <ul>
+            <li>
+              <strong>Prompt Injection Attacks:</strong> Malicious inputs
+              designed to manipulate the AI’s behavior.
+            </li>
+            <li>
+              <strong>Data Leaks:</strong> The risk of exposing sensitive system
+              information.
+            </li>
+            <li>
+              <strong>Model Manipulation:</strong> Exploiting weaknesses in the
+              AI model to produce unreliable or unintended outputs.
+            </li>
+          </ul>
+          <p>
+            To mitigate these risks, we researched and implemented measures to
+            secure the AI agent while maintaining its usability for querying
+            Azure Sentinel data.
+          </p>
+
+          <h2>Research Questions</h2>
+          <p>
+            My main research question was:
+            <br />
+            <strong
+              >How can we secure the Zolder AI agent from adversarial attacks,
+              data leaks, and model manipulation?</strong
+            >
+          </p>
+          <p>This question was broken down into three subquestions:</p>
+          <ul>
+            <li>
+              <strong
+                >What methods can be used to detect and mitigate adversarial
+                attacks?</strong
+              >
+              <br />
+              We explored input validation, abuse detection, and structured
+              queries.
+            </li>
+            <li>
+              <strong
+                >How can we securely handle sensitive data during user
+                interactions?</strong
+              >
+              <br />
+              Session-based scope enforcement.
+            </li>
+            <li>
+              <strong
+                >How can we ensure the integrity and reliability of the AI's
+                outputs?</strong
+              >
+              <br />
+              Structured response templates were implemented to ensure
+              consistency and accuracy.
+            </li>
+          </ul>
+
+          <h2>Aproaches & strategies</h2>
+          <p>Here are the key strategies we used to secure the AI agent:</p>
+          <h4>1. Input Validation and Filtering</h4>
+          <p>
+            By implementing strict input validation, we ensured that only
+            queries relevant to Azure Sentinel and security monitoring were
+            processed. Module file made sure this was possible.
+            <br />
+            <a href="images/module-file.png"
+              ><img
+                style="width: 60%; border-radius: 20px"
+                src="images/module-file.png"
+                alt="PVI tetra image"
+            /></a>
+          </p>
+
+          <h4>2. Structured Query and Response Templates</h4>
+          <p>
+            Users no longer enter freeform queries. Instead, they select
+            predefined options such as "Related User activities" or "Similar
+            Alerts" The AI uses structured templates to generate consistent and
+            accurate KQL queries.
+
+            <br />
+            <a href="images/ZolderAi-frontend-pic1.png"
+              ><img
+                style="width: 60%; border-radius: 20px"
+                src="images/ZolderAi-frontend-pic1.png"
+                alt="response-template"
+            /></a>
+          </p>
+
+          <h4>3. Session-Based Scope Enforcement</h4>
+          <p>
+            Each user session is limited to a specific context, such as
+            investigating a particular log or incident.
+            <br />
+            <a href="images/zolderai-frontend-pic2.png"
+              ><img
+                style="width: 60%; border-radius: 20px"
+                src="images/zolderai-frontend-pic2.png"
+                alt="session-based"
+            /></a>
+          </p>
+
+          <h4>4. Fine-Grained Logging</h4>
+          <p>
+            Docker Redis was used for session logging during testing, enabling
+            us to track user interactions and detect unusual behavior. For
+            production, Azure Sentinel will be used to provide better
+            scalability and security.
+          </p>
+
+          <h4>5. Reliability of the AI's outputs</h4>
+          <p>
+            Implementation of regex (Regular Expression) helped the AI agent
+            make more solid KQL queries.
+            <br />
+            <a href="images/regex.png"
+              ><img
+                style="width: 60%; border-radius: 20px"
+                src="images/regex.png"
+                alt="regex"
+            /></a>
+          </p>
+
+          <h4>Reflection and Insights</h4>
+          <p>
+            Securing the Zolder AI agent was a challenging but rewarding
+            experience. By transitioning from freeform inputs to structured
+            queries, implementing input validation, and debugging backend
+            integrations, we successfully reduced the attack surface while
+            maintaining the AI’s usability. Debugging the Azure Sentinel
+            integration was particularly insightful, as it demonstrated how
+            small errors in data retrieval can impact the overall system.
+          </p>
+          <p>
+            This project highlighted the importance of securing AI systems
+            against adversarial risks, especially when they interact with
+            sensitive platforms like Azure Sentinel. The strategies and lessons
+            learned here can serve as a foundation for securing similar AI-based
+            tools in the future.
+          </p>
+        </div>
+        <br />
+        <br />
+
+        <div class="weeks">
+          <h2>References</h2>
+          <ul>
+            <li>
+              Llama documentation, Available at:
+              <a href="https://www.llama.com/docs/overview/"
+                >https://www.llama.com/docs/overview/</a
+              >
+            </li>
+            <li>
+              MITRE ATT&CK Framework. "Adversarial Techniques." Available at:
+              <a href="https://attack.mitre.org">https://attack.mitre.org</a>
+            </li>
+            <li>
+              Prompt Engineering for Language Models: A Guide to Controlled
+              Output (Johnson et al., 2022)
+              <a
+                href="https://www.researchgate.net/profile/Golam-Md-Muktadir-2/publication/372830312_A_Brief_History_of_Prompt_Leveraging_Language_Models_Through_Advanced_Prompting/links/6568e854ce88b8703120a8a2/A-Brief-History-of-Prompt-Leveraging-Language-Models-Through-Advanced-Prompting.pdf"
+                >Online PDF</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <img
+          class="allsemgifs"
+          src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJzMGNuZGMydnprbmlmMXltazZqYjE4aHhzaXRob2pxa3VrM3pxcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jmS6emKfUZXbO88P00/giphy-downsized-large.gif"
+          alt="Gif"
+        />
+      </main>
+      <!--Images layout-->
+      <div class="responsive">
+        <!-- <div class="gallery">
+          <a target="_blank" href="images/serverpic3.jpg">
+            <img
+              src="images/serverpic3.jpg"
+              alt="Server Picture 3"
+              width="600"
+              height="400"
+            />
+          </a>
+          <div class="desc">week 1 - server hardware</div>
+        </div> -->
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="footer">
+      <footer>
+        <p>
+          &copy;PDP by Dave Derosiers <span id="current-year"></span>, All
+          Rights Reserved
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
